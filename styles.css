@@ -6,6 +6,7 @@
 html {
     font-size: 10px;
     font-family: 'SF Pro Display', sans-serif;
+    background-color: black;
 }
 
 a {
@@ -25,7 +26,7 @@ header {
     width: 100%;
     z-index: 1400;
     height: 4.4rem;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(2rem);
 }
 
@@ -78,7 +79,7 @@ header {
 }
 
 .bc {
-    background: url(images/image_1.png);
+    background: url(images/image_1_large.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -152,10 +153,11 @@ header {
 .iOS-15 {
     background: white;
     width: 100%;
-    border-radius: 30px 30px;
+    border-radius: 30px 30px 0 0;
     margin-top: -80px;
     overflow: hidden;
     text-align: center;
+    background-color: white;
 }
 
 .iOS-15-image {
@@ -243,6 +245,7 @@ header {
     text-align: center;
     font-weight: 440;
     letter-spacing: .011em;
+    padding-bottom: 15rem;
 }
 
 .WatchOS-8-image {
@@ -252,6 +255,365 @@ header {
 .WatchOS-8-container {
     margin-top: 0rem;
 }
+
+
+/*-------------small screen size-------------*/
+
+@media only screen and (max-width: 746px) {
+    .nav-list-mobile {
+        display: flex;
+    }
+    .nav-item {
+        width: 4.8rem;
+        height: 4.8rem;
+        display: flex;
+        justify-content: center;
+    }
+    .nav-item-hidden {
+        display: none;
+    }
+    .mobile-menu {
+        position: relative;
+        z-index: 1500;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .line {
+        position: absolute;
+        width: 1.7rem;
+        height: 1px;
+        background-color: white;
+        transition: margin-top .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    }
+    .line-top {
+        margin-top: 0.6rem;
+    }
+    .line-bottom {
+        margin-top: -.5rem;
+    }
+    .active .line-top {
+        margin-top: 0;
+        transform: rotate(45deg);
+        transition: transform .3192s .1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    }
+    .active .line-bottom {
+        margin-top: 0;
+        transform: rotate(-45deg);
+        transition: transform .3192s .1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    }
+    header.active {
+        height: 100%;
+        background-color: black;
+    }
+    .nav-link-apple {
+        width: 1.8rem;
+        height: 4.8rem;
+        position: relative;
+        z-index: 1500;
+    }
+    .nav-link-bag {
+        width: 1.8rem;
+        height: 4.8rem;
+        transition: opacity 3s;
+    }
+    .nav {
+        position: relative;
+    }
+    .nav-link {
+        font-size: 1.7rem;
+        padding: 0;
+        margin: auto 0;
+    }
+    .nav-list-larger {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        display: block;
+        padding: 10.5rem 5rem;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+        transition: opacity 0.3s;
+    }
+    .active .nav-list-larger {
+        width: 100%;
+        height: 100vh;
+        opacity: 1;
+        visibility: visible;
+    }
+    .active .nav-link-bag {
+        opacity: 0;
+        transition: opacity .3s;
+    }
+    .nav-list-larger .nav-item {
+        justify-content: flex-start;
+        width: 100%;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-list-larger .nav-item:nth-child(9) {
+        border-bottom: none;
+    }
+    .nav-list-larger .nav-item:nth-child(10) {
+        border-bottom: none;
+    }
+    .active .nav-list-larger .nav-item {
+        animation: fadeIn 2s ease-in;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    /*-------------font size and layout-------------*/
+    .bc {
+        background: url(images/image_1_small.png);
+        background-repeat: no-repeat;
+        background-color: black;
+        height: 65rem;
+    }
+    /*-------------major development-------------*/
+    .major-devel {
+        background-color: black;
+        height: 58rem;
+    }
+    .title-heading {
+        color: #f5f5f7;
+        font-size: 5rem;
+        text-align: center;
+        padding: 0 15rem;
+        margin-top: 7rem;
+        font-weight: 440;
+    }
+    .title-sub-header {
+        color: #f5f5f7;
+        font-size: 2rem;
+        letter-spacing: .011em;
+        padding-top: 3rem;
+        padding-left: 7.7rem;
+        padding-right: 7.7rem;
+        font-weight: 440;
+    }
+    #keynote {
+        font-size: 1.8rem;
+        display: inline-flex;
+        margin-top: 1.3rem;
+    }
+    /*-------------iOS 15-------------*/
+    .title-sub-heading {
+        color: #86868b;
+        font-size: 1.9rem;
+        padding-right: 17.4rem;
+        padding-left: 17.4rem;
+        font-weight: 440;
+        letter-spacing: .011em;
+    }
+    .preview {
+        margin-top: 4rem;
+    }
+    .preview-btn {
+        padding: 1.3rem 2.5rem;
+        background-color: black;
+        border-radius: 3rem;
+        border-style: none;
+    }
+    .preview-text {
+        color: white;
+        font-size: 1.6rem;
+    }
+}
+
+
+/*-------------Footer-------------*/
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #0070c9;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #f2f2f2;
+    font-family: calibri;
+    padding: 0 22px;
+    padding-bottom: 21px;
+    overflow: hidden;
+}
+
+.footer-content {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.footer-menu {
+    padding-top: 21px;
+    overflow: hidden;
+}
+
+.footer-col {
+    width: 20%;
+    float: left;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+h3 {
+    color: #333;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+    background: #f2f2f2;
+    margin-bottom: 6px;
+    margin-top: 0;
+}
+
+.product-list {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.product-list li {
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.product-list a {
+    color: #555;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.product-list a:hover {
+    color: #333;
+}
+
+input[type="checkbox"]:checked+.col-section .product-list {
+    transition: transform 300ms ease, -webkit-transform 300ms ease;
+    visibility: visible;
+    position: static;
+    transform: none;
+}
+
+input[type="checkbox"]:checked+.col-section h3::after {
+    transform: rotate(45deg) scale(1.08);
+}
+
+.footer-base {
+    padding-top: 34px;
+    padding-bottom: 21px;
+    color: #888;
+    font-size: 12px;
+}
+
+.footer-more-ways {
+    margin-bottom: 7px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 767px) {
+    footer {
+        padding: 0 16px;
+        padding-bottom: 21px;
+    }
+    .footer-col {
+        width: 100%;
+    }
+    .item {
+        border-bottom: 1px solid #d6d6d6;
+    }
+    h3 {
+        padding: 10px 0;
+        margin: 0;
+        cursor: pointer;
+    }
+    h3::after {
+        content: '+';
+        float: right;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: -2px;
+        margin-right: 8px;
+        transition: transform .3s ease
+    }
+    .product-list {
+        visibility: hidden;
+        position: absolute;
+        transform: translateY(-100px);
+        z-index: 1;
+        padding: 5px 0 16px 0;
+    }
+    .product-list li {
+        margin: 0;
+    }
+    .product-list a {
+        display: block;
+        padding: 6px 14px;
+    }
+    .footer-col {
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 767px) {
+    .item-padding-top {
+        padding-top: 24px;
+    }
+}
+
+.footer-legal-copyright {
+    margin-right: 30px;
+    float: left;
+    margin-top: 3px;
+}
+
+.footer-legal-links {
+    float: left;
+}
+
+.footer-legal-links a {
+    border-right: 1px solid #d6d6d6;
+    margin-right: 10px;
+    padding-right: 12px;
+    display: inline-block;
+    margin-top: 3px;
+    white-space: nowrap;
+    color: #555;
+}
+
+.footer-legal-links a:last-child {
+    border-right: none;
+}
+
+.footer-legal-links a:hover {
+    color: #333;
+}
+
+
+/*-------------iOS 15-------------*/
 
 
 /*-------------iOS 15-------------*/
